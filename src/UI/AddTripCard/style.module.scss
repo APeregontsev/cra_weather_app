@@ -1,0 +1,24 @@
+.add_trip_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Light-grey);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--Main-purple);
+  }
+}
+.add_block {
+  cursor: pointer;
+}
+.add_plus {
+  text-align: center;
+  font-size: 24px;
+}
+.add_text {
+  text-align: center;
+}

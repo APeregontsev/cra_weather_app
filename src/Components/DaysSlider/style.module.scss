@@ -1,0 +1,27 @@
+.week_days_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider_wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 880px;
+  overflow: hidden;
+}
+
+.slider_body {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  transition: transform 0.5s;
+  height: 140px;
+}
+
+.slider_control_wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}

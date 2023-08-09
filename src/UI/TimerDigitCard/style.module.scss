@@ -1,0 +1,12 @@
+.digit_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.digit_value {
+  font-size: 32px;
+  font-weight: bold;
+}
+.digit_name {
+  font-weight: normal;
+}
