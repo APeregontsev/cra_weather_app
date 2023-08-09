@@ -35,7 +35,7 @@ const Sidebar: FC<SidebarProps> = ({}) => {
       preparedData.tempMin = Math.trunc(day.tempmin);
       preparedData.icon = day.icon;
     });
-    trips.setTodayWether(preparedData);
+    trips.setTodayWeather(preparedData);
   });
 
   useEffect(() => {
@@ -56,8 +56,8 @@ const Sidebar: FC<SidebarProps> = ({}) => {
         <div className={style.weekday}>{currentWeekday}</div>
 
         <div className={style.today_weather}>
-          <img src={`./img/${trips.todayWether?.icon}.png`} alt={trips.todayWether?.icon} />
-          <div className={style.today_temp}>{trips.todayWether?.tempMax}</div>
+          <img src={`./img/${trips.todayWeather?.icon}.png`} alt={trips.todayWeather?.icon} />
+          <div className={style.today_temp}>{trips.todayWeather?.tempMax}</div>
           <div className={style.today_degree}>&deg;C</div>
         </div>
 

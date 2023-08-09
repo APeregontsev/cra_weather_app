@@ -15,8 +15,8 @@ type TripManager = {
   setActiveTripID: (id: number) => void;
   weatherList: WeatherTypeList;
   setWeatherList: (arg: WeatherTypeList) => void;
-  todayWether: WeatherType | null;
-  setTodayWether: (arg: WeatherType) => void;
+  todayWeather: WeatherType | null;
+  setTodayWeather: (arg: WeatherType) => void;
 };
 
 type WeatherType = {
@@ -38,7 +38,7 @@ export function useTrips(searchQuery: string): TripManager {
   const [tripsList, setTripsList] = useState<TripListType>(localStorageData.value);
   const [activeTripID, setActiveTripID] = useState<number>(1);
   const [weatherList, setWeatherList] = useState<WeatherTypeList>([]);
-  const [todayWether, setTodayWether] = useState<WeatherType | null>(null);
+  const [todayWeather, setTodayWeather] = useState<WeatherType | null>(null);
 
   //Data after applying search
   const filteredData = useSearch(tripsList, searchQuery);
@@ -80,14 +80,14 @@ export function useTrips(searchQuery: string): TripManager {
     // 7) Weather List (for period)
     weatherList: weatherList,
 
-    // 8)To set Weather List
+    // 8) To set Weather List
     setWeatherList: (list) => setWeatherList(list),
 
-    // 9) Today weather for seelected Trip
-    todayWether: todayWether,
+    // 9) Today weather for selected Trip
+    todayWeather: todayWeather,
 
-    // 10)To set Today weather for seelected Trip
-    setTodayWether: (day) => setTodayWether(day),
+    // 10) To set Today weather for selected Trip
+    setTodayWeather: (day) => setTodayWeather(day),
   };
 }
 
@@ -101,6 +101,6 @@ export const TripsContext = createContext<TripManager>({
   addTrip: () => {},
   setActiveTripID: () => {},
   deleteTrip: () => {},
-  todayWether: null,
-  setTodayWether: () => {},
+  todayWeather: null,
+  setTodayWeather: () => {},
 });

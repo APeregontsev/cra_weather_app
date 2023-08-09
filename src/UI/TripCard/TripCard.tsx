@@ -31,7 +31,7 @@ const TripCard: FC<TripCardProps> = ({ tripData, active, onClick, onRemove }) =>
     <div className={classNames(style.trip_card_wrapper, { [style.active]: active })} onClick={onClick}>
       <div className={style.remove} onClick={removeTrip}></div>
       <div className={style.img_conteiner}>
-        <img src={`./img/cities/${tripData.name}.jpg`} alt="" />
+        <img src={`./img/cities/${tripData.name.toLowerCase()}.jpg`} alt="" />
       </div>
       <div className={style.text_block}>
         <div className={style.text_title}>{tripData.name}</div>

@@ -30,6 +30,12 @@ const AddTripModal: FC<AddTripModalProps> = ({ onClose }) => {
     const allFieldsValid = selectValue.value !== 0 && startDate && endDate;
     if (!allFieldsValid) return;
 
+    // Check if END > START Date
+    const endDateMS = new Date(endDate).getTime();
+    const startDateMS = new Date(startDate).getTime();
+
+    if (endDateMS < startDateMS) return;
+
     // Lets prepare new Trip data for adding to TripList
     const newTripData = { id: 0, name: selectValue.label, startDate, endDate };
 
@@ -46,7 +52,7 @@ const AddTripModal: FC<AddTripModalProps> = ({ onClose }) => {
 
   const maxDate = () => {
     const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() + 15);
+    currentDate.setDate(currentDate.getDate() + 14);
     return currentDate.toISOString().split("T")[0];
   };
 
