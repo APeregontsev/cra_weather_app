@@ -1,5 +1,5 @@
 import style from "./style.module.scss";
-import { FC, useContext, useEffect } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import classNames from "classnames";
 import Button from "../../UI/Button/Button";
 import TimerDigitCard from "../../UI/TimerDigitCard/TimerDigitCard";
@@ -7,10 +7,42 @@ import { useCountdown } from "../../useCountdown";
 import { TripsContext } from "../../useTrips";
 import { apiKey } from "../../startData";
 import { useFetching } from "../../useFetching";
+import jwt_decode from "jwt-decode";
 
 type SidebarProps = {};
 
 const Sidebar: FC<SidebarProps> = ({}) => {
+  // Google LOGIN CODE
+
+  const [user, setUser] = useState<any>();
+
+  function handleCallbackResponse(response: any) {
+    const userObject = jwt_decode(response.credential);
+    setUser(userObject);
+
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!! Credentials", userObject);
+  }
+
+  function handleSignOut() {
+    setUser(null);
+  }
+
+  useEffect(() => {
+    /* global google */
+
+    window.google.accounts.id.initialize({
+      client_id: "661424951133-rmmo17jfcpvesav4mjhs4g2fijjts3a6.apps.googleusercontent.com",
+      callback: handleCallbackResponse,
+    });
+
+    const parent = document.getElementById("signInDiv");
+
+    window.google.accounts.id.renderButton(parent as HTMLElement, {
+      type: "standard",
+      size: "medium",
+    });
+  }, [user]);
+
   // Obtaining data from States
   const trips = useContext(TripsContext);
 
@@ -47,9 +79,17 @@ const Sidebar: FC<SidebarProps> = ({}) => {
   return (
     <div className={style.sidebar_wrapper}>
       <div className={style.login_wrapper}>
-        <Button type={"login"} disabled action={() => console.log("Click")}>
+        {!user && <div id="signInDiv"></div>}
+
+        {user && (
+          <div className={style.googleLoginContainer} onClick={() => handleSignOut()}>
+            <img className={style.googleImg} src={user.picture} />
+            <p className={style.googleName}>{user.name}</p>
+          </div>
+        )}
+        {/*   <Button type={"login"} disabled action={() => console.log("Click")}>
           Login
-        </Button>
+        </Button> */}
       </div>
 
       <div className={style.today_view_card}>

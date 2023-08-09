@@ -38,5 +38,3 @@ export const selectData: SelectOptionType[] = [
 
 // API key
 export const apiKey = "MESYLPREKWZD9EZSQMFGDNE2V";
-// export const apiKey = "TYKNEVLH4Y9XGZG354FYJG9RT";
-// "homepage": "https://aperegontsev.github.io/cra_weather_app",
