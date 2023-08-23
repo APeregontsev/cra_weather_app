@@ -2,7 +2,7 @@ import { SelectOptionType } from "./UI/Select/Select";
 import { TripType } from "./useTrips";
 
 // Starting data for TripsList
-export const startData: TripType = { id: 1, name: "Berlin", startDate: "2023-08-22", endDate: "2023-08-23" };
+export const startData: TripType = { id: 1, name: "Berlin", startDate: "2023-08-30", endDate: "2023-08-31" };
 
 //Starting data for Select
 export const selectData: SelectOptionType[] = [
