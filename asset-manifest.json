@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cra_weather_app/static/css/main.ca324310.css",
-    "main.js": "/cra_weather_app/static/js/main.64e184b4.js",
+    "main.js": "/cra_weather_app/static/js/main.8a41fafe.js",
     "static/media/search.png": "/cra_weather_app/static/media/search.aad603dc346e37736a83.png",
     "static/media/close.png": "/cra_weather_app/static/media/close.fed0464789c84dbc9f9c.png",
     "index.html": "/cra_weather_app/index.html",
     "main.ca324310.css.map": "/cra_weather_app/static/css/main.ca324310.css.map",
-    "main.64e184b4.js.map": "/cra_weather_app/static/js/main.64e184b4.js.map"
+    "main.8a41fafe.js.map": "/cra_weather_app/static/js/main.8a41fafe.js.map"
   },
   "entrypoints": [
     "static/css/main.ca324310.css",
-    "static/js/main.64e184b4.js"
+    "static/js/main.8a41fafe.js"
   ]
 }
